@@ -4,6 +4,8 @@ def main():
     print(text)
     count = word_count(text)
     print(f"{count} words found in the document")
+    chars_dict = get_chars_dict(text)
+    print(chars_dict)
 
 def get_book_text(path):
     with open(path) as f:
@@ -12,5 +14,15 @@ def get_book_text(path):
 def word_count(path):
     words = path.split()
     return len(words)
+
+def get_chars_dict(text):
+    chars = {}  #create a directory
+    for c in text: #search each character in the directory
+        lowered = c.lower()
+        if lowered in chars:
+            chars[lowered] += 1 
+        else:
+            chars[lowered] = 1
+    return chars
 
 main()
