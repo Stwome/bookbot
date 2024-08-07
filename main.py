@@ -5,10 +5,10 @@ def main():
     count = word_count(text)
     #print(f"{count} words found in the document")
     chars_dict = get_chars_dict(text)
-    print(chars_dict)
+
     chars_list = list(chars_dict.items())
-    print(chars_list)
-    chars_list.sort()
+    chars_list.sort() #sorts alphabetically
+
     print(chars_list)
 
 def get_book_text(path):
